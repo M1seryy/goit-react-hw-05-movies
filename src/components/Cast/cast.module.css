@@ -1,0 +1,10 @@
+.castImige{
+    width: 300px;
+}
+.listItem{
+   border:  1px solid black;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+}

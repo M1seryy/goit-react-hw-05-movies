@@ -1,0 +1,21 @@
+.header {
+  height: 90px;
+  background-color: rgb(88, 88, 167);
+}
+.listList {
+  margin: 0px;
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+.listButton {
+  border: none;
+  font-size: 24px;
+  background-color: transparent;
+  color: white;
+  margin-top: 20px;
+  transition: 400ms ease-in;
+}
+.listButton:hover {
+  color: red;
+}

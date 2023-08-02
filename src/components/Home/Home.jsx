@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './home.module.css';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { Link } from 'react-router-dom';

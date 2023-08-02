@@ -1,5 +1,5 @@
 import { findByName } from 'API/trends';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {  useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './movies.module.css';
 

@@ -1,6 +1,6 @@
-import { findById, mvovieCast } from 'API/trends';
+import { findById } from 'API/trends';
 import React, { useEffect, useState } from 'react';
-import { Link, Outlet, Route, Routes, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import styles from './details.module.css';
 
 const Deatils = ({ data }) => {
@@ -12,9 +12,7 @@ const Deatils = ({ data }) => {
     findById(movieId)
       .then(res => setdataDetails(res))
       .catch(err => console.log(err));
-
-   
-  }, []);
+  }, [movieId]);
 
   return (
     <div className={styles.movieWrap}>
@@ -29,7 +27,7 @@ const Deatils = ({ data }) => {
       <p>{dataDetails?.overview}</p>
       <Link to={`/movies/${movieId}/cast`}>Cast</Link>
       <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };

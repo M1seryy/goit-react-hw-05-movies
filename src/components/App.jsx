@@ -1,4 +1,4 @@
-import { getTrends, mvovieCast } from 'API/trends';
+import { getTrends } from 'API/trends';
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cast from './Cast/Cast';

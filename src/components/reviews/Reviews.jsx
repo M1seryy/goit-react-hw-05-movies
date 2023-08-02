@@ -10,7 +10,7 @@ const Reviews = () => {
     movieOverview(movieId)
       .then(res => setdata(res))
       .catch(err => console.log(err));
-  }, []);
+  }, [movieId]);
   console.log(data);
   return <h1>{data.overview}</h1>;
 };

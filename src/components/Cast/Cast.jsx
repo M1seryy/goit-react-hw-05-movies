@@ -10,7 +10,7 @@ const Cast = () => {
     mvovieCast(movieId)
       .then(res => setData(res))
       .catch(err => console.log(err));
-  }, []);
+  }, [movieId]);
   return (
     <ul className={styles.list}>
       {data?.cast?.map(item => {

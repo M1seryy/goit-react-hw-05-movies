@@ -1,9 +1,10 @@
 import React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Home = ({ data }) => {
+  const location = useLocation();
   return (
     <>
       <ul>
@@ -14,7 +15,7 @@ const Home = ({ data }) => {
           rowHeight={164}
         >
           {data.map(item => (
-            <Link key={item.id} to={`/movies/${item.id}`}>
+            <Link key={item.id} state={location} to={`/movies/${item.id}`}>
               <ImageListItem key={item.id}>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}

@@ -1,12 +1,12 @@
 import { findByName } from 'API/trends';
 import React, {  useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './movies.module.css';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const movieQuery = useRef();
-
+const location = useLocation()
   const onHandle = e => {
     e.preventDefault();
     findByName(movieQuery.current.value)
@@ -24,7 +24,7 @@ const Movies = () => {
         {movies.map(item => {
           return (
             <li key={item.id}>
-              <Link to={`/movies/${item.id}`}>{item.title}</Link>
+              <Link to={`/movies/${item.id}`} state={location}>{item.title}</Link>
             </li>
           );
         })}

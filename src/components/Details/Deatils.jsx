@@ -1,11 +1,19 @@
 import { findById } from 'API/trends';
 import React, { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import styles from './details.module.css';
 
 const Deatils = ({ data }) => {
   const [dataDetails, setdataDetails] = useState([]);
-
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log('location: ', location);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -14,8 +22,12 @@ const Deatils = ({ data }) => {
       .catch(err => console.log(err));
   }, [movieId]);
 
+  const backHandler = () => {
+    navigate(location.state);
+  };
   return (
     <div className={styles.movieWrap}>
+      <button className='backBtn' onClick={backHandler}>Back</button>
       <img
         className={styles.poster}
         src={`https://image.tmdb.org/t/p/original/${dataDetails?.backdrop_path}`}

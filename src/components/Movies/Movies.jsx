@@ -26,7 +26,7 @@ const Movies = () => {
         .then(res => setMovies(res.results))
         .catch(err => console.log(err));
     } else return;
-  }, []);
+  }, [query]);
   return (
     <div>
       <form onSubmit={onHandle}>

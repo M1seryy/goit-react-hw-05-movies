@@ -9,7 +9,8 @@ import {
 } from 'react-router-dom';
 import styles from './details.module.css';
 
-const Deatils = ({ data }) => {
+const Deatils = () => {
+  const [backPath, setBackPath] = useState('');
   const [dataDetails, setdataDetails] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,12 +23,19 @@ const Deatils = ({ data }) => {
       .catch(err => console.log(err));
   }, [movieId]);
 
+  useEffect(() => {
+    console.log("mount");
+    setBackPath(location.state);
+  },[]);
+
   const backHandler = () => {
-    navigate(location.state);
+    navigate(backPath);
   };
   return (
     <div className={styles.movieWrap}>
-      <button className='backBtn' onClick={backHandler}>Back</button>
+      <button className="backBtn" onClick={backHandler}>
+        Back
+      </button>
       <img
         className={styles.poster}
         src={`https://image.tmdb.org/t/p/original/${dataDetails?.backdrop_path}`}

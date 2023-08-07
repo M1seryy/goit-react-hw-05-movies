@@ -26,7 +26,7 @@ const Deatils = () => {
   useEffect(() => {
     console.log("mount");
     setBackPath(location.state);
-  },[movieId]);
+  },[]);
 
   const backHandler = () => {
     navigate(backPath);

@@ -14,9 +14,7 @@ const Deatils = () => {
   const [dataDetails, setdataDetails] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log('location: ', location);
   const { movieId } = useParams();
-
   useEffect(() => {
     findById(movieId)
       .then(res => setdataDetails(res))
@@ -24,12 +22,12 @@ const Deatils = () => {
   }, [movieId]);
 
   useEffect(() => {
-    console.log("mount");
-    setBackPath(location.state);
-  },[]);
+    console.log('mount');
+    setBackPath(location);
+  }, [backPath]);
 
   const backHandler = () => {
-    navigate(backPath);
+    navigate(backPath.state);
   };
   return (
     <div className={styles.movieWrap}>

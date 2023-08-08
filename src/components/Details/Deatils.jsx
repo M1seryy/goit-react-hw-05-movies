@@ -22,9 +22,9 @@ const Deatils = () => {
   }, [movieId]);
 
   useEffect(() => {
-    console.log('mount');
     setBackPath(location);
-  }, [location]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const backHandler = () => {
     navigate(backPath.state);

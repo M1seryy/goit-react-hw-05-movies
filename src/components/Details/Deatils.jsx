@@ -24,7 +24,7 @@ const Deatils = () => {
   useEffect(() => {
     console.log('mount');
     setBackPath(location);
-  }, [backPath]);
+  }, []);
 
   const backHandler = () => {
     navigate(backPath.state);
